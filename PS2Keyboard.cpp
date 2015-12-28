@@ -386,6 +386,17 @@ int PS2Keyboard::readUnicode() {
 	return result;
 }
 
+// Return if a raw PS/2 scan code is available.
+bool PS2Keyboard::scanCodeAvailable() {
+	return (head != tail);
+}
+
+// Return the next raw PS/2 scan code. MUST BE CALLED ONLY WHEN
+// scanCodeAvailable() RETURNS TRUE! 
+uint8_t PS2Keyboard::readScanCode(void) {
+	return get_scan_code();
+}
+
 PS2Keyboard::PS2Keyboard() {
   // nothing to do here, begin() does it all
 }

@@ -207,6 +207,15 @@ class PS2Keyboard {
      */
     static int read();
     static int readUnicode();
+
+    /**
+     * Some applications need access to the raw PS/2 scan codes. While lower-level
+     * and thus more annoying, scanCodeAvailable() and readScanCode() give access
+     * to the raw PS/2 protocol stream.
+     */
+     
+    bool scanCodeAvailable();
+    uint8_t readScanCode(void);
 };
 
 #endif
