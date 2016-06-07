@@ -417,11 +417,6 @@ void PS2Keyboard::clear() {
 	UTF8next = 0;
 }
 
-uint8_t PS2Keyboard::readScanCode(void)
-{
-	return get_scan_code();
-}
-
 int PS2Keyboard::read() {
 	uint8_t result;
 
